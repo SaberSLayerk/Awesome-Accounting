@@ -257,32 +257,29 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<script>
+  // Footer year (safe)
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
-  <script>
+  // Hamburger menu (safe)
   const header = document.getElementById("siteHeader");
   const toggle = document.querySelector(".menu-toggle");
+  const nav = document.getElementById("primaryNav");
 
-  toggle.addEventListener("click", () => {
-    const isOpen = header.classList.toggle("nav-open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-  });
-  </script>
-
-  <script>
-  document.querySelectorAll("#primaryNav a").forEach(a => {
-    a.addEventListener("click", () => {
-      header.classList.remove("nav-open");
-      toggle.setAttribute("aria-expanded", "false");
+  if (header && toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
     });
-  });
-  </script>
+
+    nav.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        header.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+</script>
 </body>
 </html>
