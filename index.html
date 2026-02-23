@@ -1,37 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample HTML Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Awesome Accounting</title>
+  <meta name="description" content="Trusted accounting solutions for your business." />
+  <link rel="stylesheet" href="styles.css" />
+   
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to My Sample Page</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#section1">Section 1</a></li>
-            <li><a href="#section2">Section 2</a></li>
-            <li><a href="#section3">Section 3</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="section1">
-            <h2>Section 1</h2>
-            <p>This is the first section of the sample page.</p>
-        </section>
-        <section id="section2">
-            <h2>Section 2</h2>
-            <p>This is the second section of the sample page.</p>
-        </section>
-        <section id="section3">
-            <h2>Section 3</h2>
-            <p>This is the third section of the sample page.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Sample Page. All rights reserved.</p>
-    </footer>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#">
+          <img src="Assets/Logo Idea.png" alt="Awesome Accounting Logo" style="width: 100px; height: auto;" />
+          <div class="brand-name">Awesome<span> Accounting</span></div>
+        </a>
+
+        <nav aria-label="Primary navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          
+          <a class="btn btn-primary" href="#quote">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow"><span class="dot" aria-hidden="true"></span>Reliable financial clarity</div>
+
+            <h1>Trusted Accounting<br/><span>Solutions for Your Business</span></h1>
+
+            <p class="lead">
+              Expert financial management to help your business thrive—bookkeeping, payroll,
+              taxes, and advisory services built for busy owners.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#quote">Get Started</a>
+              <a class="btn btn-ghost" href="#services">Learn More</a>
+            </div>
+          </div>
+
+          <div class="hero-art" aria-label="Illustration panel">
+            <div class="sparkle s1"></div>
+            <div class="sparkle s2"></div>
+            <div class="sparkle s3"></div>
+
+            <div class="art-grid">
+              <div class="panel">
+                <h4>Monthly Performance</h4>
+                <div class="mini-bars" aria-hidden="true">
+                  <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <h4>Portfolio Mix</h4>
+                <div class="mini-pie" aria-hidden="true"></div>
+              </div>
+
+              <div class="panel" style="grid-column: 1 / -1;">
+                <h4>Quick Snapshot</h4>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                  <div style="flex:1; min-width:150px; background:rgba(239,246,255,.75); border:1px solid rgba(220,235,255,.95); border-radius:16px; padding:12px;">
+                    <div style="font-weight:900; font-size:18px; color:var(--primary);">High</div>
+                    <div style="color:var(--muted); font-weight:700; font-size:12px;">Accuracy rate</div>
+                  </div>
+                  <div style="flex:1; min-width:150px; background:rgba(239,246,255,.75); border:1px solid rgba(220,235,255,.95); border-radius:16px; padding:12px;">
+                    <div style="font-weight:900; font-size:18px; color:var(--primary);">15+</div>
+                    <div style="color:var(--muted); font-weight:700; font-size:12px;">Satisfied clients</div>
+                  </div>
+                  <div style="flex:1; min-width:150px; background:rgba(239,246,255,.75); border:1px solid rgba(220,235,255,.95); border-radius:16px; padding:12px;">
+                    <div style="font-weight:900; font-size:18px; color:var(--primary);">20+</div>
+                    <div style="color:var(--muted); font-weight:700; font-size:12px;">Years experience</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="cards" id="services">
+      <div class="container">
+        <div class="card-grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v18H5V4a2 2 0 0 1 2-2zm0 4h10V4H7v2zm2 4h6v2H9V10zm0 4h6v2H9v-2z"/></svg>
+            </div>
+            <h3>Bookkeeping &amp; Payroll</h3>
+            <p>Accurate record-keeping and payroll management—on time, every time.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 2h10v2H7V2zm-2 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7zm4 2h6v2H9V9zm0 4h6v2H9v-2zm0 4h4v2H9v-2z"/></svg>
+            </div>
+            <h3>Tax Preparation</h3>
+            <p>Maximize savings, stay compliant, and file confidently with expert support.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 20h18v2H3v-2zm2-3V4h4v13H5zm6 0V8h4v9h-4zm6 0V11h4v6h-4z"/></svg>
+            </div>
+            <h3>Financial Consulting</h3>
+            <p>Strategic guidance for budgeting, cash flow, and growth planning.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-wrap">
+          <div class="about-grid">
+            <div>
+              <div class="section-label">About Us</div>
+              <h2>Your Trusted Accounting Partner</h2>
+              <p class="sub">
+                We help business owners turn numbers into clarity. Our approach is clean,
+                proactive, and built around the way you actually run your company.
+              </p>
+
+              <div class="badge">
+                <strong>20+</strong>
+                <span>Years Experience</span>
+              </div>
+
+              <div class="stats">
+                <div class="stat">
+                  <div class="big">15+</div>
+                  <div class="small">Satisfied Clients</div>
+                </div>
+                <div class="stat">
+                  <div class="big">High</div>
+                  <div class="small">Accuracy Rate</div>
+                </div>
+                <div class="stat">
+                  <div class="big">Constant</div>
+                  <div class="small">Client Satisfaction</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portrait" aria-label="Team member panel">
+              <div class="portrait-inner">
+                <div class="avatar" aria-hidden="true"></div>
+                <div class="portrait-note">
+                  Friendly experts. Clear reporting.<br/>Fast answers when you need them.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-panel">
+          <h2>Get in Touch with Us Today!</h2>
+          <p>Contact us for a free consultation to see how we can assist your business.</p>
+          <a class="btn btn-primary" id="quote" href="#">
+            Schedule a Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> FinancePro. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
