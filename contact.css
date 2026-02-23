@@ -1,4 +1,4 @@
- :root{
+:root{
       /* Light-blue accounting palette */
       --bg:            #cfdce979;   /* page background */
       --surface:       #FFFFFF;   /* cards */
@@ -651,4 +651,106 @@ input:focus, textarea:focus{
 @media (max-width: 760px){
   .grid{ grid-template-columns: 1fr; }
 }
-     
+
+/* ✅ Mobile hamburger additions (ONLY what’s needed for phones) */
+
+/* 1) Hamburger button (3-line) */
+.menu-toggle{
+  display: none; /* shown on mobile only */
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(220,235,255,.95);
+  background: rgba(255,255,255,.70);
+  box-shadow: 0 10px 24px rgba(15,42,67,.08);
+  cursor: pointer;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.menu-toggle:active{ transform: translateY(1px); }
+
+/* The 3 bars */
+.menu-toggle .barline{
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 999px;
+  transition: transform .16s ease, top .16s ease, opacity .16s ease;
+}
+.menu-toggle .barline:nth-child(1){ top: 14px; }
+.menu-toggle .barline:nth-child(2){ top: 21px; }
+.menu-toggle .barline:nth-child(3){ top: 28px; }
+
+/* 2) Mobile nav panel behavior */
+@media (max-width: 920px){
+  /* show hamburger */
+  .menu-toggle{ display: inline-flex; align-items: center; justify-content: center; }
+
+  /* allow header row to wrap nicely */
+  .nav{
+    flex-wrap: wrap;
+  }
+
+  /* Keep nav area full width when opened */
+  nav{
+    width: 100%;
+    order: 3; /* pushes nav under the top row */
+  }
+
+  /* Hide menu by default on mobile (kept consistent with your existing rule) */
+  nav ul{
+    display: none;
+  }
+
+  /* When header has .nav-open, show dropdown menu */
+  header.nav-open nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    margin-top: 10px;
+    background: rgba(255,255,255,.88);
+    border: 1px solid rgba(220,235,255,.95);
+    border-radius: 18px;
+    box-shadow: 0 16px 34px rgba(15,42,67,.10);
+  }
+
+  header.nav-open nav a{
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+
+  header.nav-open nav a:hover{
+    background: rgba(47,128,237,.08);
+  }
+
+  /* Animate hamburger into an X when open */
+  header.nav-open .menu-toggle .barline:nth-child(1){
+    top: 21px;
+    transform: rotate(45deg);
+  }
+  header.nav-open .menu-toggle .barline:nth-child(2){
+    opacity: 0;
+  }
+  header.nav-open .menu-toggle .barline:nth-child(3){
+    top: 21px;
+    transform: rotate(-45deg);
+  }
+}
+
+/* 3) Small-screen tweaks that won’t change your form styling */
+@media (max-width: 520px){
+  /* Keep buttons finger-friendly; form submit stays fit-content unless you change it */
+  .hero-actions .btn{
+    width: 100%;
+  }
+}
+
+/* 4) Slightly smaller container padding on tiny phones */
+@media (max-width: 420px){
+  .container{
+    width: min(var(--container), calc(100% - 28px));
+  }
+}
