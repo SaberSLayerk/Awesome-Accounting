@@ -10,30 +10,38 @@
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <div class="nav">
-        <a class="brand" href="#">
-          <img src="Assets/Logo Idea.png" alt="Awesome Accounting Logo" style="width: 100px; height: auto;" />
-          <div class="brand-name">Awesome<span> Accounting</span></div>
-        </a>
+  <header id="siteHeader">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="Assets/Logo Idea.png" alt="Awesome Accounting Logo" style="width: 100px; height: auto;" />
+        <div class="brand-name">Awesome<span> Accounting</span></div>
+      </a>
 
-        <nav aria-label="Primary navigation">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
+      <!-- ✅ Hamburger button (shows on mobile via CSS) -->
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <span class="barline"></span>
+        <span class="barline"></span>
+        <span class="barline"></span>
+      </button>
 
-        <div class="nav-actions">
-          
-          <a class="btn btn-primary" href="contact.html">Get a Quote</a>
-        </div>
+      <nav id="primaryNav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ✅ Fixed: nav-actions wrapper properly contains the button -->
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="contact.html">Get a Quote</a>
       </div>
+
     </div>
-  </header>
+  </div>
+</header>
 
  
     <!-- QUICK JUMP MENU -->
@@ -521,6 +529,25 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+  const header = document.getElementById("siteHeader");
+  const toggle = document.querySelector(".menu-toggle");
+
+  toggle.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+  </script>
+
+  <script>
+  document.querySelectorAll("#primaryNav a").forEach(a => {
+    a.addEventListener("click", () => {
+      header.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
   </script>
 </body>
 </html>
