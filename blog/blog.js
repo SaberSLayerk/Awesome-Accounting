@@ -29,7 +29,7 @@ async function loadPosts() {
 
     container.innerHTML = posts.map((post) => {
 
-      const postUrl = `/blog/single-post.html?slug=${encodeURIComponent(post.slug)}`
+      const postUrl = `../blog/single-post.html?slug=${encodeURIComponent(post.slug)}`
 
       const date = post.publishedAt
         ? new Date(post.publishedAt).toLocaleDateString()
