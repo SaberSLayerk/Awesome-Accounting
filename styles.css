@@ -881,6 +881,7 @@ section[id] { scroll-margin-top: 90px; }
   display: flex;
   justify-content: flex-end; /* 🔑 pushes button to the right */
   margin-top: 30px;
+  margin-bottom: 80px; /* 🔑 pushes it up from bottom */
 }
 
 .back_button{
