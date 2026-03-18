@@ -48,17 +48,25 @@ async function loadPost() {
 
     container.innerHTML = `
       <article class="post">
-        <h1>${escapeHtml(post.title || 'Untitled')}</h1>
 
-        <div class="post-meta">
-          ${date}${post.author ? ` • ${escapeHtml(post.author)}` : ''}
+        <header class="post-header">
+          <h1 class="post-title">
+            ${escapeHtml(post.title || 'Untitled')}
+          </h1>
+
+          <div class="post-meta">
+            ${date}${post.author ? ` • ${escapeHtml(post.author)}` : ''}
+          </div>
+        </header>
+
+        <div class="post-image">
+          ${image}
         </div>
-
-        ${image}
 
         <div class="post-content">
           ${body}
         </div>
+        
       </article>
     `
   } catch (error) {

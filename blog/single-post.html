@@ -1,13 +1,54 @@
 <!DOCTYPE html>
+<html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Single Post</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Awesome Accounting</title>
+  <meta name="description" content="Trusted accounting solutions for your business." />
+  <link rel="stylesheet" href="../styles.css" />
+   
 </head>
+
+<body>
+  <header id="siteHeader">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="../index.html">
+        <img src="../Assets/Logo Idea.png" alt="Awesome Accounting Logo" style="width: 100px; height: auto;" />
+        <div class="brand-name">Awesome<span> Accounting</span></div>
+      </a>
+
+      <!-- ✅ Hamburger button (shows on mobile via CSS) -->
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <span class="barline"></span>
+        <span class="barline"></span>
+        <span class="barline"></span>
+      </button>
+
+      <nav id="primaryNav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../aboutus.html">About Us</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../blog/blog.html">Newsletter</a></li>
+        </ul>
+      </nav>
+
+      <!-- ✅ Fixed: nav-actions wrapper properly contains the button -->
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="contact.html">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+</header>
 <body>
   <main id="post-page">
-    <p>Loading post...</p>
+    <p id="loading_msg">Loading post...</p>
   </main>
 
   <script type="module" src="./post.js?v=777"></script>

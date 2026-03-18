@@ -36,27 +36,37 @@ async function loadPosts() {
         : ''
 
       const image = post.coverImage
-        ? `<img src="${urlFor(post.coverImage).width(800).url()}" alt="${escapeHtml(post.title)}">`
-        : ''
+  ? `<img src="${urlFor(post.coverImage).width(600).height(400).url()}" alt="${escapeHtml(post.title)}">`
+  : ''
 
       return `
-        <article>
+        <article class="blog-card">
 
-          <a href="${postUrl}">
+          <a href="${postUrl}" class="blog-card-image">
             ${image}
           </a>
 
-          <h2>
-            <a href="${postUrl}">
-              ${escapeHtml(post.title)}
+          <div class="blog-card-content">
+
+            <h2 class="blog-card-title">
+              <a href="${postUrl}">
+                ${escapeHtml(post.title)}
+              </a>
+            </h2>
+
+            <div class="blog-card-meta">
+              ${date}${post.author ? ` • ${escapeHtml(post.author)}` : ''}
+            </div>
+
+            <p class="blog-card-excerpt">
+              ${escapeHtml(post.excerpt || '')}
+            </p>
+
+            <a href="${postUrl}" class="blog-read-more">
+              Read More
             </a>
-          </h2>
 
-          <div>${date}${post.author ? ` • ${escapeHtml(post.author)}` : ''}</div>
-
-          <p>${escapeHtml(post.excerpt || '')}</p>
-
-          <a href="${postUrl}">Read More</a>
+          </div>
 
         </article>
       `
