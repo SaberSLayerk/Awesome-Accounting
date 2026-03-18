@@ -66,7 +66,12 @@ async function loadPost() {
         <div class="post-content">
           ${body}
         </div>
-        
+
+       <div class="post-actions">
+        <a href="./blog.html" class="back_button">
+          Back to Posts
+        </a>
+      </div>
       </article>
     `
   } catch (error) {
