@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <header id="siteHeader">
+<header id="siteHeader">
   <div class="container">
     <div class="nav">
       <a class="brand" href="../index.html">
@@ -21,7 +21,6 @@
         <div class="brand-name">Awesome<span> Accounting</span></div>
       </a>
 
-      <!-- ✅ Hamburger button (shows on mobile via CSS) -->
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
         <span class="barline"></span>
         <span class="barline"></span>
@@ -34,15 +33,13 @@
           <li><a href="../services.html">Services</a></li>
           <li><a href="../aboutus.html">About Us</a></li>
           <li><a href="../contact.html">Contact</a></li>
-          <li><a href="/Awesome-Accounting/blog/blog.html">Newsletter</a></li>
+          <li><a href="../blog/blog.html">Newsletter</a></li>
         </ul>
       </nav>
 
-      <!-- ✅ Fixed: nav-actions wrapper properly contains the button -->
       <div class="nav-actions">
-        <a class="btn btn-primary" href="contact.html">Contact Us</a>
+        <a class="btn btn-primary" href="../contact.html">Contact Us</a>
       </div>
-
     </div>
   </div>
 </header>
@@ -52,6 +49,30 @@
 <div id="blog-list"></div>
 
 <script type="module" src="./blog.js?v=300"></script>
+<script>
+  // Footer year (safe)
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Hamburger menu (safe)
+  const header = document.getElementById("siteHeader");
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.getElementById("primaryNav");
+
+  if (header && toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    nav.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        header.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
