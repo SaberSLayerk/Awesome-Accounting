@@ -2,7 +2,7 @@
 // contact-handler.php
 
 // ✅ EDIT THESE:
-$TO_EMAIL = "sebastianlevi2007@gmail.com";  // <-- where you want messages delivered
+$TO_EMAIL = "awesomeaccounting@aol.com";  // <-- where you want messages delivered
 $SITE_NAME = "Awesome Accounting";
 
 // Basic hardening
